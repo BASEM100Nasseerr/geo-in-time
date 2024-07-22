@@ -1,0 +1,1 @@
+{"uuid":"bc397b21-4508-434c-9f19-a7d66a61107c","name":"Tests.TC2_AllEmployee.setup","children":["60fe698d-1825-4136-b8a6-3614ac096ae0"],"description":"","befores":[{"name":"setup","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1721577082384,"stop":1721577090564}],"afters":[],"start":1721577082383,"stop":1721577090565}

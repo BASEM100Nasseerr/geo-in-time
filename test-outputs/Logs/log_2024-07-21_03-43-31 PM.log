@@ -1,0 +1,3 @@
+[INFO] 21-07-2024 15:43:31 [main] [Tests.TC1_LoginPage.setup(TC1_LoginPage.java:25)] - null
+[INFO] 21-07-2024 15:43:35 [main] [Tests.TC1_LoginPage.setup(TC1_LoginPage.java:27)] - edge driver is opened
+[INFO] 21-07-2024 15:43:39 [main] [Tests.TC1_LoginPage.setup(TC1_LoginPage.java:29)] - Page is redirected to the URL

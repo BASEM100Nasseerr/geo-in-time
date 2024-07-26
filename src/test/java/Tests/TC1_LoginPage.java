@@ -29,10 +29,7 @@ public class TC1_LoginPage {
 
     @Test
     public void validLoginTC() throws IOException {
-        new po1_LoginPage(getDriver())
-                .scroll().enterUserName(USERNAME)
-                .enterPassword(PASSWORD)
-                .clickOnLogin().Otp(OTP).verify();
+        new po1_LoginPage(getDriver()).scroll().loginSteps(USERNAME ,PASSWORD ,OTP);
         Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "HOME_URL")));
     }
 

@@ -36,13 +36,8 @@ public class TC2_AllEmployee {
         new po1_LoginPage(getDriver())
                 .scroll().enterUserName(USERNAME)
                 .enterPassword(PASSWORD)
-                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().clcikOnEmployeeManagement()
-                .clickOnAllEmployee().clcikOnAddEmployee().enterFirstName("basem").enterLastName("naser")
-                        .title("Acc").enterEmail(email)
-                        .enterPassword("Bb$3062014").enterBirthDate("2024/05/05")
-                        .enterHiringDate("2000/02/02").enterGender().enterInsideGender()
-                        .enterOffice().enterInsideOffice().number("01125814341");
-        Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "HOME_URL")));
+                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee();
+        Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "EMPLOYEE_URL")));
     }
 
 

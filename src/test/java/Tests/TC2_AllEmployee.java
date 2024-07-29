@@ -40,7 +40,7 @@ public class TC2_AllEmployee {
         Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "EMPLOYEE_URL")));
     }
 
-
+ // bassem
 
   /*  public static String generateRandomNumber() {
         Random randomOTP = new Random();

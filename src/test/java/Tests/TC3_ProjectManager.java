@@ -4,6 +4,7 @@ import Pages.po1_LoginPage;
 import Utilities.DataUtils;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Test;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -24,14 +25,14 @@ public class TC3_ProjectManager {
         getDriver().manage().timeouts().
                 implicitlyWait(Duration.ofSeconds(10));
     }
-    public void validLoginTC() throws IOException, InterruptedException {
-
+    @Test
+    public void createProjectTracker() throws IOException, InterruptedException {
 
         //String email = "bnasser+" + generateRandomNumber() + "@acuanix.com";
         new po1_LoginPage(getDriver())
                 .scroll().enterUserName(USERNAME)
                 .enterPassword(PASSWORD)
-                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee();
+                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee().AddProject();
         Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "PROJECT_URL")));
     }
     //@AfterMethod(alwaysRun = true)

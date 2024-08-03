@@ -143,13 +143,14 @@ public class po2_HomePage {
         return this;
     }
 
-    public po2_HomePage AddEmployee() throws InterruptedException {
-        return clcikOnTrust().clcikOnEmployeeManagement().clickOnAllEmployee()
+    public po3_ProjectManager AddEmployee() throws InterruptedException {
+         clcikOnTrust().clcikOnEmployeeManagement().clickOnAllEmployee()
                 .clcikOnAddEmployee().enterFirstName("basem").enterLastName("naser").title("Acc").
                 enterEmail(emaill).enterPassword("Bb$3062014").enterBirthDate("2000/02/02")
                 .enterHiringDate("2024/05/05").
                 number(phone).enterGender()
                 .enterInsideGender().enterOffice().enterInsideOffice();
+         return new po3_ProjectManager(driver);
     }
 
     String emaill = "bnasser+" + generateRandomNumber() + "@acuanix.com";

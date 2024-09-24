@@ -32,7 +32,7 @@ public class TC3_ProjectManager {
         new po1_LoginPage(getDriver())
                 .scroll().enterUserName(USERNAME)
                 .enterPassword(PASSWORD)
-                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee().AddProject();
+                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee();
         Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "PROJECT_URL")));
     }
     //@AfterMethod(alwaysRun = true)

@@ -12,7 +12,7 @@ import java.time.Duration;
 import static DriverFactory.DriverFactory.*;
 import static Utilities.DataUtils.getPropertyValue;
 
-public class TC3_ProjectManager {
+public class TC4_ProjectManager {
     private final String USERNAME = DataUtils.getJsonData("validLogin", "username");
     private final String PASSWORD = DataUtils.getJsonData("validLogin", "password");
     private final String OTP = DataUtils.getJsonData("validLogin" , "Otp");
@@ -32,7 +32,7 @@ public class TC3_ProjectManager {
         new po1_LoginPage(getDriver())
                 .scroll().enterUserName(USERNAME)
                 .enterPassword(PASSWORD)
-                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee();
+                .clickOnLogin().Otp(OTP).verify().clcikOnTrust().AddEmployee().AddProject();
         Assert.assertTrue(new po1_LoginPage(getDriver()).assertLoginTc(getPropertyValue("environment", "PROJECT_URL")));
     }
     //@AfterMethod(alwaysRun = true)

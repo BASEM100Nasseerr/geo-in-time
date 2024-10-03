@@ -4,7 +4,7 @@ import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class po3_ProjectManager {
+public class po4_ProjectManager {
     private final WebDriver driver ;
 
 private final By ProjectTracker = By.xpath("//span[@class=\"hide-menu\"])[8]");
@@ -25,51 +25,52 @@ private final By ProjectTracker = By.xpath("//span[@class=\"hide-menu\"])[8]");
     private final By isnideEmployee = By.xpath("");
 
 
-    public po3_ProjectManager (WebDriver driver) {this.driver = driver ;}
-    public po3_ProjectManager ClickOnProjectTracker ()
+    public po4_ProjectManager(WebDriver driver) {this.driver = driver ;}
+    public po4_ProjectManager ClickOnProjectTracker ()
     {
         Utility.clickingOnElement(driver , ProjectTracker);
         return this ;
     }
-    public po3_ProjectManager ClickOnAllProject ()
+    public po4_ProjectManager ClickOnAllProject ()
     {
         Utility.clickingOnElement(driver , AllProject);
         return this ;
     }
-    public po3_ProjectManager ClickOnCreateNewProject ()
+    public po4_ProjectManager ClickOnCreateNewProject ()
     {
         Utility.clickingOnElement(driver , CreateNewProject);
         return this ;
     }
 
-    public po3_ProjectManager EnterProjectName (String projectName)
+    public po4_ProjectManager EnterProjectName (String projectName)
     {
         Utility.sendData(driver , ProjectName , projectName );
         return this ;
     }
-    public po3_ProjectManager ClickOnProjectStatus ()
+    public po4_ProjectManager ClickOnProjectStatus ()
     {
         Utility.clickingOnElement(driver , ProjectStatus);
         return this ;
     }
-    public po3_ProjectManager ClickOnchooseTheStatus ()
+    public po4_ProjectManager ClickOnchooseTheStatus ()
     {
         Utility.clickingOnElement(driver , chooseTheStatus);
         return this ;
     }
-    public po3_ProjectManager ClickOnProjectPriority ()
+    public po4_ProjectManager ClickOnProjectPriority ()
     {
         Utility.clickingOnElement(driver , ProjectPriority);
         return this ;
     }
-    public po3_ProjectManager ClickOnChooseThePriority ()
+    public po4_ProjectManager ClickOnChooseThePriority ()
     {
         Utility.clickingOnElement(driver , ChooseThePriority);
         return this ;
     }
-    public po3_ProjectManager AddProject ()
+    public po1_LoginPage AddProject ()
     {
-        return ClickOnProjectTracker().ClickOnAllProject().ClickOnCreateNewProject().EnterProjectName("project1")
+         ClickOnProjectTracker().ClickOnAllProject().ClickOnCreateNewProject().EnterProjectName("project1")
                 .ClickOnProjectStatus().ClickOnchooseTheStatus().ClickOnProjectPriority().ClickOnChooseThePriority();
+         return new po1_LoginPage(driver);
     }
 }

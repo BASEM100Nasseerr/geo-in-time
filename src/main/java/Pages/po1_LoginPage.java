@@ -60,9 +60,10 @@ public class po1_LoginPage {
 
     public po2_HomePage loginSteps (String usernameText , String passwordText , String OtpText)
     {
-        return enterUserName(usernameText)
+         enterUserName(usernameText)
                 .enterPassword(passwordText).scroll()
                 .clickOnLogin().Otp(OtpText).verify();
+        return new po2_HomePage(driver);
     }
 
 

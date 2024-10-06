@@ -38,7 +38,7 @@ public class po2_HomePage {
     }
 
     public po2_HomePage clcikOnTrust() {
-        Utility.clickingOnElement(driver, By.cssSelector("div button[style=\"background-color: #11e497;\"] span.mat-button-wrapper"));
+        Utility.clickingOnElement(driver, trustBrowser);
         return this;
     }
 

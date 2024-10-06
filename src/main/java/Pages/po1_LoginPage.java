@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 
 public class po1_LoginPage {
-    private WebDriver driver ;
+    private  WebDriver driver ;
     private final By username = By.id("email");
     private final By password = By.id("password");
     private final By login = By.id("submit");
@@ -20,50 +20,46 @@ public class po1_LoginPage {
     }
 
 
-    public po1_LoginPage enterUserName (String usernameText)
+    public void enterUserName (String usernameText)
     {
         Utility.sendData(driver,username ,usernameText);
-        return this ;
+
     }
 
-    public po1_LoginPage enterPassword (String passwordText)
+    public void  enterPassword (String passwordText)
     {
         Utility.sendData(driver , password , passwordText);
-        return this ;
+
     }
-    public po1_LoginPage scroll ()
+    public void scroll ()
     {
        Utility.scrolling(driver, By.id("submit"));
-        return this ;
+
     }
-    public po1_LoginPage clickOnLogin ()
+    public void clickOnLogin ()
     {
         Utility.clickingOnElement(driver , login);
-        return this ;
+
     }
-    public po1_LoginPage Otp (String OtpText)
+    public void Otp (String OtpText)
     {
-       /* driver.findElement(enterOtp).sendKeys(OtpText);
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));*/
+
         Utility.sendData(driver , enterOtp , OtpText);
-        return this ;
+
     }
-    public po2_HomePage verify  ()
+    public void verify  ()
 
     {
       Utility.clickingOnElement(driver , By.id("sendcode"));
-        return new po2_HomePage(driver);
-    }
-    public Boolean assertLoginTc(String urlText) {
-        return driver.getCurrentUrl().equals(urlText);
     }
 
-    public po2_HomePage loginSteps (String usernameText , String passwordText , String OtpText)
+
+    public void loginSteps (String usernameText , String passwordText , String OtpText)
     {
-         enterUserName(usernameText)
-                .enterPassword(passwordText).scroll()
-                .clickOnLogin().Otp(OtpText).verify();
-        return new po2_HomePage(driver);
+         enterUserName(usernameText);
+                enterPassword(passwordText);scroll()
+                ;clickOnLogin();Otp(OtpText);verify();
+
     }
 
 

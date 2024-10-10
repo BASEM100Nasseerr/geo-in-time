@@ -7,7 +7,7 @@ import org.openqa.selenium.WebDriver;
 import java.time.Duration;
 import java.util.Random;
 
-public class po2_HomePage {
+public class po2_AllEmployee {
     private final WebDriver driver;
     private final By trustBrowser = By.cssSelector("div button[style=\"background-color: #11e497;\"] span.mat-button-wrapper");
     private final By EmployeeManagement = By.cssSelector("a[test-id=\"Employees Management\"]");
@@ -33,78 +33,71 @@ public class po2_HomePage {
     //private final  By WorkPlan = By.id("");
     // private final  By role = By.cssSelector("");
 
-    public po2_HomePage(WebDriver driver) {
+
+    public po2_AllEmployee(WebDriver driver) {
         this.driver = driver;
     }
 
-    public po2_HomePage clcikOnTrust() {
+    public void clcikOnTrust() {
         Utility.clickingOnElement(driver, trustBrowser);
-        return this;
     }
 
-    public po2_HomePage clcikOnEmployeeManagement() {
-        Utility.clickingOnElement(driver, By.cssSelector("a[test-id=\"Employees Management\"]"));
-        return this;
+    public void clickOnEmployeeManagement() {
+        Utility.clickingOnElement(driver,EmployeeManagement);
+
     }
 
-    public po2_HomePage clickOnAllEmployee() {
+    public void clickOnAllEmployee() {
 
-        Utility.clickingOnElement(driver, By.cssSelector("a[test-id=\"All Employees\"]"));
-        return this;
+        Utility.clickingOnElement(driver, allEmployee);
     }
 
-    public po2_HomePage clcikOnAddEmployee() throws InterruptedException {
+    public void clickOnAddEmployee() throws InterruptedException {
         Thread.sleep(Duration.ofSeconds(5));
-        Utility.clickingOnElement(driver, By.cssSelector("div button[test-id=\"addEmployeeButton\"] span [role=\"img\"]"));
-        return this;
+        Utility.clickingOnElement(driver,addEmployee);
     }
 
-    public po2_HomePage enterFirstName(String firstname) {
+    public void enterFirstName(String firstname) {
         Utility.sendData(driver, firstName, firstname);
-        return this;
     }
 
-    public po2_HomePage enterLastName(String lastname) {
+    public void enterLastName(String lastname) {
         Utility.sendData(driver, lastName, lastname);
-        return this;
     }
 
-    public po2_HomePage title(String employeetitle) {
+    public void title(String employeetitle) {
         Utility.sendData(driver, employeeTitle, employeetitle);
-        return this;
+
     }
 
-    public po2_HomePage number(String numberPhone) {
+    public void  number(String Phone) {
 
         Utility.clickingOnElement(driver, phoneNumber);
         Utility.clickingOnElement(driver, By.xpath("(//span[@class=\"iti__country-name\"])[2]"));
-        Utility.sendData(driver, enetrYourNumber, numberPhone);
-        return this;
+        Utility.sendData(driver, enetrYourNumber ,Phone );
+
     }
 
-    public po2_HomePage enterEmail(String emailtext) {
+    public void enterEmail(String emailtext) {
         Utility.sendData(driver, email, emailtext);
-        return this;
     }
 
-    public po2_HomePage enterPassword(String passwordtext) {
+    public void enterPassword(String passwordtext) {
         Utility.sendData(driver, password, passwordtext);
-        return this;
     }
 
-    public po2_HomePage enterBirthDate(String birthtext) {
+    public void enterBirthDate(String birthtext) {
         Utility.sendData(driver, birthDate, birthtext);
-        return this;
     }
 
-    public po2_HomePage enterHiringDate(String hiringtext) {
+    public void enterHiringDate(String hiringtext) {
         Utility.sendData(driver, hiringDate, hiringtext);
-        return this;
+
     }
 
-    public po2_HomePage enterNationality() {
+    public void enterNationality() {
         //driver.findElement(nationality).click();
-        return this;
+
     }
 
     // public pages.po2_HomePage selectCountry ()
@@ -113,44 +106,39 @@ public class po2_HomePage {
         //  return this ;
     }
 
-    public po2_HomePage enterGender() {
+    public void enterGender() {
         Utility.clickingOnElement(driver, gender);
-        return this;
     }
 
-    public po2_HomePage enterInsideGender() {
+    public void enterInsideGender() {
         Utility.clickingOnElement(driver, isnideGender);
-        return this;
     }
 
-    public po2_HomePage enterOffice() {
+    public void enterOffice() {
         Utility.clickingOnElement(driver, office);
-        return this;
     }
 
-    public po2_HomePage enterInsideOffice() {
+    public void enterInsideOffice() {
         Utility.clickingOnElement(driver, isnideOffice);
-        return this;
     }
 
-    public po2_HomePage enterTeam() {
+    public void enterTeam() {
         //  driver.findElement(Team).isSelected();
-        return this;
     }
 
-    public po2_HomePage enterRole(String title) {
+    public void enterRole(String title) {
         // driver.findElement(role).sendKeys();
-        return this;
+
     }
 
-    public po4_ProjectManager AddEmployee() throws InterruptedException {
-         clcikOnTrust().clcikOnEmployeeManagement().clickOnAllEmployee()
-                .clcikOnAddEmployee().enterFirstName("basem").enterLastName("naser").title("Acc").
-                enterEmail(emaill).enterPassword("Bb$3062014").enterBirthDate("2000/02/02")
-                .enterHiringDate("2024/05/05").
-                number(phone).enterGender()
-                .enterInsideGender().enterOffice().enterInsideOffice();
-         return new po4_ProjectManager(driver);
+    public void AddEmployee() throws InterruptedException {
+         clcikOnTrust(),clickOnEmployeeManagement(),clickOnAllEmployee(),clickOnAddEmployee()
+                ,enterFirstName("basem"),enterLastName("naser"),title("Acc")
+               , enterEmail(emaill),enterPassword("Bb$3062014"),enterBirthDate("2000/02/02")
+                ,enterHiringDate("2024/05/05")
+                ,number(phoneNum),enterGender()
+                ,enterInsideGender(),enterOffice(),enterInsideOffice();
+
     }
 
     String emaill = "bnasser+" + generateRandomNumber() + "@acuanix.com";
@@ -161,7 +149,7 @@ public class po2_HomePage {
         return String.format("%04d", num);
     }
 
-    String phone = "0112581" + generateRandomNumber();
+    String phoneNum = "0112581" + generateRandomNumber();
 
     public static String generateRandomPhoneNumber() {
         Random randomOTP = new Random();

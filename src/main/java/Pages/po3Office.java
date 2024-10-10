@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 public class po3Office {
 
     private final WebDriver driver ;
+    private final By configuration =By.xpath("//a [@test-id='Configuration']");
+    private final By office =By.cssSelector("//span[text()=' Offices']");
     private final By addButton =By.cssSelector("[role=\"img\"]");
     private final By OfficeNameField=By.cssSelector("[formcontrolname=\"name\"]");
     private final By OfficeAreaField=By.cssSelector("[formcontrolname=\"area\"]");
@@ -24,7 +26,14 @@ public class po3Office {
         this.driver = driver;
     }
 
-
+    public po3Office clickOnConfiguration (){
+        Utility.clickingOnElement(driver,configuration);
+        return this ;
+    }
+    public po3Office clickOnOffice (){
+        Utility.clickingOnElement(driver,office);
+        return this ;
+    }
     public po3Office clickOnAdd (){
         Utility.clickingOnElement(driver,addButton);
         return this ;
@@ -76,7 +85,7 @@ public class po3Office {
     }
 
     public po2_HomePage createOffice (String officeText , String AreaText ){
-        clickOnOfficeName(officeText).clickOnOfficeArea (AreaText)
+       clickOnConfiguration().clickOnOffice().clickOnOfficeName(officeText).clickOnOfficeArea (AreaText)
                 .clickOnCountrySelect().clickOnInsideCountry().clickOnCitySelectDropDon().clickOnInsideCitySelect()
                 .clickOnTimeZoneSelect().clickOnInsideTimeZone().clickOnCheckBox().clickOnCreateBtn();
         return new po2_HomePage(driver);

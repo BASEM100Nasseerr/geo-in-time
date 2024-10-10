@@ -57,11 +57,25 @@ private final By ProjectTracker = By.xpath("//span[@class=\"hide-menu\"])[8]");
         Utility.clickingOnElement(driver , chooseTheStatus);
         return this ;
     }
+    public po4_ProjectManager ClickOnProjectStartDate ()
+    {
+        Utility.clickingOnElement(driver , ProjectStartDate);
+        return this ;
+    }
+    public po4_ProjectManager ClickOnProjectDueDate ()
+    {
+        Utility.clickingOnElement(driver , ProjectDueDate);
+        return this ;
+    }
+
+
+
     public po4_ProjectManager ClickOnProjectPriority ()
     {
         Utility.clickingOnElement(driver , ProjectPriority);
         return this ;
     }
+
     public po4_ProjectManager ClickOnChooseThePriority ()
     {
         Utility.clickingOnElement(driver , ChooseThePriority);

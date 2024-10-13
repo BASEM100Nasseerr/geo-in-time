@@ -69,12 +69,11 @@ public class po2_AllEmployee {
         Utility.sendData(driver, employeeTitle, employeetitle);
 
     }
-
-    public void  number(String Phone) {
+    public void  number(String phoneNum) {
 
         Utility.clickingOnElement(driver, phoneNumber);
         Utility.clickingOnElement(driver, By.xpath("(//span[@class=\"iti__country-name\"])[2]"));
-        Utility.sendData(driver, enetrYourNumber ,Phone );
+        Utility.sendData(driver, enetrYourNumber ,phoneNum);
 
     }
 
@@ -132,12 +131,19 @@ public class po2_AllEmployee {
     }
 
     public void AddEmployee() throws InterruptedException {
-         clcikOnTrust(),clickOnEmployeeManagement(),clickOnAllEmployee(),clickOnAddEmployee()
-                ,enterFirstName("basem"),enterLastName("naser"),title("Acc")
-               , enterEmail(emaill),enterPassword("Bb$3062014"),enterBirthDate("2000/02/02")
-                ,enterHiringDate("2024/05/05")
-                ,number(phoneNum),enterGender()
-                ,enterInsideGender(),enterOffice(),enterInsideOffice();
+         clcikOnTrust();
+         clickOnEmployeeManagement();
+         clickOnAllEmployee();
+         clickOnAddEmployee();
+                enterFirstName("basem");enterLastName("naser");title("Acc");
+                enterEmail(emaill);
+                enterPassword("Bb$3062014");
+                enterBirthDate("2000/02/02");
+                enterHiringDate("2024/05/05");
+                number(phoneNum);
+                enterGender();
+                enterInsideGender();
+                enterOffice();enterInsideOffice();
 
     }
 
@@ -149,12 +155,12 @@ public class po2_AllEmployee {
         return String.format("%04d", num);
     }
 
-    String phoneNum = "0112581" + generateRandomNumber();
+    String phoneNum = "0112581" + generateRandomPhoneNumber();
 
     public static String generateRandomPhoneNumber() {
         Random randomOTP = new Random();
         int num = randomOTP.nextInt(9999);
-        return String.format("%04d", num);
+       return String.format("%04d", num);
 
     }
 

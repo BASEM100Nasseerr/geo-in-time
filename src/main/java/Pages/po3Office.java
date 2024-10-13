@@ -16,7 +16,7 @@ public class po3Office {
     private final By countrySelectDropDown=By.xpath("//mat-select[@formcontrolname='country']");
     private final By InsideCountrySelectDropDown=By.xpath("//span[text()='Egypt ']");
     private final By citySelectDropDon=By.xpath("//mat-select[@formcontrolname='city']");
-    private final By InsideCitySelectDropDon=By.xpath("//span[text()='Cairo']");
+        private final By InsideCitySelectDropDon=By.xpath("//span[text()='Cairo']");
     private final By timeZoneSelectDropDown=By.xpath("//mat-select[@formcontrolname='timeZone']");
     private final By InsideTimeZoneSelectDropDown=By.xpath("(//span[text()='Africa/Cairo'])[1]");
     private final By checkBox=By.xpath("(//span[@class=\"mat-checkbox-inner-container\"])[1]");
@@ -26,69 +26,68 @@ public class po3Office {
         this.driver = driver;
     }
 
-    public po3Office clickOnConfiguration (){
+    public void clickOnConfiguration (){
         Utility.clickingOnElement(driver,configuration);
-        return this ;
+
     }
-    public po3Office clickOnOffice (){
+    public void clickOnOffice (){
         Utility.clickingOnElement(driver,office);
-        return this ;
+
     }
-    public po3Office clickOnAdd (){
+    public void clickOnAdd (){
         Utility.clickingOnElement(driver,addButton);
-        return this ;
+
     }
 
-    public po3Office clickOnOfficeName (String officeText){
+    public void clickOnOfficeName (String officeText){
         Utility.sendData(driver,OfficeNameField , "Adel");
-        return this ;
+
     }
-    public po3Office clickOnOfficeArea (String AreaText){
+    public void clickOnOfficeArea (String AreaText){
         Utility.sendData(driver,OfficeAreaField , "Nile");
-        return this ;
+
     }
 
-    public po3Office clickOnCountrySelect (){
+    public void clickOnCountrySelect (){
         Utility.clickingOnElement(driver,countrySelectDropDown);
-        return this ;
+
     }
-    public po3Office clickOnInsideCountry (){
+    public void clickOnInsideCountry (){
         Utility.clickingOnElement(driver,InsideCountrySelectDropDown);
-        return this ;
+
     }
 
-    public po3Office clickOnCitySelectDropDon (){
+    public void clickOnCitySelectDropDon (){
         Utility.clickingOnElement(driver,citySelectDropDon);
-        return this ;
+
     }
 
-    public po3Office clickOnInsideCitySelect (){
+    public void clickOnInsideCitySelect (){
         Utility.clickingOnElement(driver,InsideCitySelectDropDon);
-        return this ;
+
     }
-    public po3Office clickOnTimeZoneSelect (){
+    public void clickOnTimeZoneSelect (){
         Utility.clickingOnElement(driver,timeZoneSelectDropDown);
-        return this ;
+
     }
-    public po3Office clickOnInsideTimeZone (){
+    public void clickOnInsideTimeZone (){
         Utility.clickingOnElement(driver,InsideTimeZoneSelectDropDown);
-        return this ;
+
     }
 
-    public po3Office clickOnCheckBox (){
+    public void clickOnCheckBox (){
         Utility.clickingOnElement(driver,checkBox);
-        return this ;
+
     }
-    public po3Office clickOnCreateBtn (){
+    public void clickOnCreateBtn (){
         Utility.clickingOnElement(driver,createBtn);
-        return this ;
+
     }
 
-    public po2_HomePage createOffice (String officeText , String AreaText ){
-       clickOnConfiguration().clickOnOffice().clickOnOfficeName(officeText).clickOnOfficeArea (AreaText)
-                .clickOnCountrySelect().clickOnInsideCountry().clickOnCitySelectDropDon().clickOnInsideCitySelect()
-                .clickOnTimeZoneSelect().clickOnInsideTimeZone().clickOnCheckBox().clickOnCreateBtn();
-        return new po2_HomePage(driver);
+    public void createOffice (String officeText , String AreaText ){
+       clickOnConfiguration();clickOnOffice();clickOnOfficeName(officeText);clickOnOfficeArea (AreaText)
+                ;clickOnCountrySelect();clickOnInsideCountry();clickOnCitySelectDropDon();clickOnInsideCitySelect()
+                ;clickOnTimeZoneSelect();clickOnInsideTimeZone();clickOnCheckBox();clickOnCreateBtn();
 
     }
 

@@ -13,6 +13,7 @@ public class po1_LoginPage {
     private final By login = By.id("submit");
     private final  By enterOtp = By.id("otp");
     private final By verifyOtp = By.id("sendcode");
+    private final By trustBrowser = By.cssSelector("div button[style=\"background-color: #11e497;\"] span.mat-button-wrapper");
 
     public po1_LoginPage(WebDriver driver)
     {
@@ -52,13 +53,17 @@ public class po1_LoginPage {
     {
       Utility.clickingOnElement(driver , By.id("sendcode"));
     }
+    public void clcikOnTrust() {
+        Utility.clickingOnElement(driver, trustBrowser);
+    }
+
 
 
     public void loginSteps (String usernameText , String passwordText , String OtpText)
     {
          enterUserName(usernameText);
                 enterPassword(passwordText);scroll()
-                ;clickOnLogin();Otp(OtpText);verify();
+                ;clickOnLogin();Otp(OtpText);verify();clcikOnTrust();
 
     }
 

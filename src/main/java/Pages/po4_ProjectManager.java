@@ -5,9 +5,9 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
 public class po4_ProjectManager {
-    private final WebDriver driver ;
+    private final WebDriver driver;
 
-private final By ProjectTracker = By.xpath("//span[@class=\"hide-menu\"])[8]");
+    private final By ProjectTracker = By.xpath("//a[text()='Project Tracker']");
     private final By AllProject = By.xpath("//a[@test-id=\"All Projects\"]");
     private final By CreateNewProject = By.xpath("(//span[@class=\"mat-button-wrapper\"])[6]");
     private final By ProjectName = By.xpath("input[formcontrolname=\"projectName\"]");
@@ -25,66 +25,71 @@ private final By ProjectTracker = By.xpath("//span[@class=\"hide-menu\"])[8]");
     private final By isnideEmployee = By.xpath("");
 
 
-    public po4_ProjectManager(WebDriver driver) {this.driver = driver ;}
-    public po4_ProjectManager ClickOnProjectTracker ()
-    {
-        Utility.clickingOnElement(driver , ProjectTracker);
-        return this ;
-    }
-    public po4_ProjectManager ClickOnAllProject ()
-    {
-        Utility.clickingOnElement(driver , AllProject);
-        return this ;
-    }
-    public po4_ProjectManager ClickOnCreateNewProject ()
-    {
-        Utility.clickingOnElement(driver , CreateNewProject);
-        return this ;
+    public po4_ProjectManager(WebDriver driver) {
+        this.driver = driver;
     }
 
-    public po4_ProjectManager EnterProjectName (String projectName)
-    {
-        Utility.sendData(driver , ProjectName , projectName );
-        return this ;
+    public void ClickOnProjectTracker() {
+        Utility.clickingOnElement(driver, ProjectTracker);
+
     }
-    public po4_ProjectManager ClickOnProjectStatus ()
-    {
-        Utility.clickingOnElement(driver , ProjectStatus);
-        return this ;
+
+    public void ClickOnAllProject() {
+        Utility.clickingOnElement(driver, AllProject);
+
     }
-    public po4_ProjectManager ClickOnchooseTheStatus ()
-    {
-        Utility.clickingOnElement(driver , chooseTheStatus);
-        return this ;
+
+    public void ClickOnCreateNewProject() {
+        Utility.clickingOnElement(driver, CreateNewProject);
+
     }
-    public po4_ProjectManager ClickOnProjectStartDate ()
-    {
-        Utility.clickingOnElement(driver , ProjectStartDate);
-        return this ;
+
+    public void EnterProjectName(String projectName) {
+        Utility.sendData(driver, ProjectName, projectName);
+
     }
-    public po4_ProjectManager ClickOnProjectDueDate ()
-    {
-        Utility.clickingOnElement(driver , ProjectDueDate);
-        return this ;
+
+    public void ClickOnProjectStatus() {
+        Utility.clickingOnElement(driver, ProjectStatus);
+
+    }
+
+    public void ClickOnchooseTheStatus() {
+        Utility.clickingOnElement(driver, chooseTheStatus);
+
+    }
+
+    public void ClickOnProjectStartDate() {
+        Utility.clickingOnElement(driver, ProjectStartDate);
+
+    }
+
+    public void ClickOnProjectDueDate() {
+        Utility.clickingOnElement(driver, ProjectDueDate);
+
     }
 
 
+    public void ClickOnProjectPriority() {
+        Utility.clickingOnElement(driver, ProjectPriority);
 
-    public po4_ProjectManager ClickOnProjectPriority ()
-    {
-        Utility.clickingOnElement(driver , ProjectPriority);
-        return this ;
     }
 
-    public po4_ProjectManager ClickOnChooseThePriority ()
-    {
-        Utility.clickingOnElement(driver , ChooseThePriority);
-        return this ;
+    public void ClickOnChooseThePriority() {
+        Utility.clickingOnElement(driver, ChooseThePriority);
+
     }
-    public po1_LoginPage AddProject ()
-    {
-         ClickOnProjectTracker().ClickOnAllProject().ClickOnCreateNewProject().EnterProjectName("project1")
-                .ClickOnProjectStatus().ClickOnchooseTheStatus().ClickOnProjectPriority().ClickOnChooseThePriority();
-         return new po1_LoginPage(driver);
+
+    public void AddProject() {
+        ClickOnProjectTracker();
+        ClickOnAllProject();
+        ClickOnCreateNewProject();
+        EnterProjectName("project1")
+        ;
+        ClickOnProjectStatus();
+        ClickOnchooseTheStatus();
+        ClickOnProjectPriority();
+        ClickOnChooseThePriority();
+
     }
 }

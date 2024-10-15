@@ -9,7 +9,7 @@ import java.util.Random;
 
 public class po2_AllEmployee {
     private final WebDriver driver;
-    private final By trustBrowser = By.cssSelector("div button[style=\"background-color: #11e497;\"] span.mat-button-wrapper");
+
     private final By EmployeeManagement = By.cssSelector("a[test-id=\"Employees Management\"]");
     private final By allEmployee = By.cssSelector("a[test-id=\"All Employees\"]");
     private final By addEmployee = By.cssSelector("div button[test-id=\"addEmployeeButton\"] span [role=\"img\"]");
@@ -38,9 +38,7 @@ public class po2_AllEmployee {
         this.driver = driver;
     }
 
-    public void clcikOnTrust() {
-        Utility.clickingOnElement(driver, trustBrowser);
-    }
+
 
     public void clickOnEmployeeManagement() {
         Utility.clickingOnElement(driver,EmployeeManagement);
@@ -131,7 +129,6 @@ public class po2_AllEmployee {
     }
 
     public void AddEmployee() throws InterruptedException {
-         clcikOnTrust();
          clickOnEmployeeManagement();
          clickOnAllEmployee();
          clickOnAddEmployee();

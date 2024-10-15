@@ -4,11 +4,13 @@ import Utilities.Utility;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
+import java.time.Duration;
+
 public class po3Office {
 
     private final WebDriver driver ;
-    private final By configuration =By.xpath("//a [@test-id='Configuration']");
-    private final By office =By.cssSelector("//span[text()=' Offices']");
+    private final By configuration =By.xpath("//a[text()='Configuration']");
+    private final By office =By.xpath("//span[text()=' Offices ']");
     private final By addButton =By.cssSelector("[role=\"img\"]");
     private final By OfficeNameField=By.cssSelector("[formcontrolname=\"name\"]");
     private final By OfficeAreaField=By.cssSelector("[formcontrolname=\"area\"]");
@@ -26,7 +28,8 @@ public class po3Office {
         this.driver = driver;
     }
 
-    public void clickOnConfiguration (){
+    public void clickOnConfiguration () throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(10));
         Utility.clickingOnElement(driver,configuration);
 
     }
@@ -84,7 +87,9 @@ public class po3Office {
 
     }
 
-    public void createOffice (String officeText , String AreaText ){
+    public void createOffice (String officeText , String AreaText ) throws InterruptedException {
+
+
        clickOnConfiguration();clickOnOffice();clickOnOfficeName(officeText);clickOnOfficeArea (AreaText)
                 ;clickOnCountrySelect();clickOnInsideCountry();clickOnCitySelectDropDon();clickOnInsideCitySelect()
                 ;clickOnTimeZoneSelect();clickOnInsideTimeZone();clickOnCheckBox();clickOnCreateBtn();

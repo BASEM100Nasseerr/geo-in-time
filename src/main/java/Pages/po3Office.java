@@ -9,9 +9,9 @@ import java.time.Duration;
 public class po3Office {
 
     private final WebDriver driver ;
-    private final By configuration =By.xpath("//a[text()='Configuration']");
+    private final By configuration =By.xpath("//a[@test-id='Configuration']");
     private final By office =By.xpath("//span[text()=' Offices ']");
-    private final By addButton =By.cssSelector("[role=\"img\"]");
+    private final By addButton =By.xpath("\"//mat-icon[text()='add']\"");
     private final By OfficeNameField=By.cssSelector("[formcontrolname=\"name\"]");
     private final By OfficeAreaField=By.cssSelector("[formcontrolname=\"area\"]");
     //private final By OfficeManagerField=By.id("mat-input-5");
@@ -37,7 +37,8 @@ public class po3Office {
         Utility.clickingOnElement(driver,office);
 
     }
-    public void clickOnAdd (){
+    public void clickOnAdd () throws InterruptedException {
+        Thread.sleep(Duration.ofSeconds(5));
         Utility.clickingOnElement(driver,addButton);
 
     }
@@ -90,7 +91,7 @@ public class po3Office {
     public void createOffice (String officeText , String AreaText ) throws InterruptedException {
 
 
-       clickOnConfiguration();clickOnOffice();clickOnOfficeName(officeText);clickOnOfficeArea (AreaText)
+       clickOnConfiguration();clickOnOffice();clickOnAdd();clickOnOfficeName(officeText);clickOnOfficeArea (AreaText)
                 ;clickOnCountrySelect();clickOnInsideCountry();clickOnCitySelectDropDon();clickOnInsideCitySelect()
                 ;clickOnTimeZoneSelect();clickOnInsideTimeZone();clickOnCheckBox();clickOnCreateBtn();
 

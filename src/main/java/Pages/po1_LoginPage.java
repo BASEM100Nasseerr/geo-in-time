@@ -51,7 +51,7 @@ public class po1_LoginPage {
     public void verify  ()
 
     {
-      Utility.clickingOnElement(driver , By.id("sendcode"));
+      Utility.clickingOnElement(driver , verifyOtp);
     }
     public void clcikOnTrust() {
         Utility.clickingOnElement(driver, trustBrowser);
